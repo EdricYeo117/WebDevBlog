@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style2.css">
+   <title>Week 7</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono&display=swap" rel="stylesheet">
+</head>
+
+</head>
+
+<h1> Week 7 Development Blog</h1>
+
+<body>
+  <ul>
+    <h2> What I learnt in Week 7: </h2>
+    <h3>
+      <li> Document Object Model (DOM) </li>
+      <li> MEvent Handling & Validation </li>
+      <li> JSON Local Storage</li>
+  </ul>
+  <h4>
+    Document Object Model:
+  </h4>
+  <h5>
+    As a browser loads a webpage,it creates a model of that page.
+    The model is called a DOM Tree
+    Here is an example of a DOM Tree:
+    <img src="image/DOMTree.png" alt="DOMTree">
+    Steps to use:
+    <li> Locate the note that represents the leemnt you want to work it</li>
+    <li> Use its text content, child elements and attributes </li>
+    Using getElementById(); or getElementsByClassName(); or getElementsByTagName();
+    querySelectorAll(); also allows to select multiple elements
+  </h5>
+  <h4>
+    Event Handling
+  </h4>
+  <h5>
+    There are different type of events such as 
+    <li> UI Events </li>
+    <li> Keyboard Events </li>
+    <li> Mouse Events </li>
+    <li> Focus Events </li>
+    <li> Form Events </li>
+    Event Listeners are used to trigger a function when an event occurs
+    <img src="image/EventListener.png" alt="EventListener">
+    Event Object tells information about the event, containing helpful data about the event
+    It can be passed to any function that is event handler or listener
+  </h5>
+  <h4>
+    Validation:
+  </h4>
+  <h5>
+    Cilent vs Server Validation:
+    <li> Client Validation is done on the client's computer, before sending the data to the server </li>
+    <li> It provides instant feedback and saves load on server</li>
+    Some input types are textboxes, radio buttons, checkboxes, dropdown menus, submit buttons, etc
+  </h5>
+  <h4>
+    JSON Local Storage:
+  </h4>
+  <h5>
+    HTML5 storage lets you store data on the client side and access it later
+    Data it stores can only be accessed by domain that set the data
+    There is local and session storage, implemented with localStorage and sessionStorage objects
+    <li> Local Storage: Stored when tab closed, all open windows/tab can access </li>
+    <li> Session Storage: Not Stored when tab closed, only tab that created can access </li>
+    Can store up to 5mb of data per domain in storage object, will ask for user for permission if require more
+    Data stored in JSON is made up of keys and values
+    Value can be string, number, Boolean, array, object or null
+  </h5>
+  <hr style="width:50%;text-align:left;margin-left:0">
+</body>

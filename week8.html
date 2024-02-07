@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style2.css">
+   <title>Week 8</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono&display=swap" rel="stylesheet">
+</head>
+
+</head>
+
+<h1> Week 8 Development Blog</h1>
+
+<body>
+  <ul>
+    <h2> What I learnt in Week 8: </h2>
+    <h3>
+      <li> Learnt how to fetch API using Get and Set </li>
+      <li> Primarily using AJAX </li>
+      <li> Has to be parsed as JSON string </li>
+  </ul>
+  <h4>
+    Example use case(s):
+  </h4>
+  <p>
+    In this week's CA, we actually implemented the use of fetching API using AJAX. 
+    We also fetched information from a public weather API to get the 24 hourly weather forecast for PSI.
+    Below is an example of the JavaScript code used to fetch the PSI data:
+  </p>
+  <pre>
+    document.addEventListener("DOMContentLoaded", function() {
+      var url = "https://api.data.gov.sg/v1/environment/psi?date_time=2016-06-27T23:00:00&date=2016-06-27";
+      fetch(url)
+        .then(function(response) {
+        return response.json();
+        })
+        .then(function(data) {
+          console.log("API status: " + data.api_info.status);
+          var reading_twenty_four = data.items[0].readings.psi_twenty_four_hourly;
+          var content = "";
+          for (var key in reading_twenty_four) {
+          console.log(key + ": " + reading_twenty_four[key]);
+          content += key + ": " + reading_twenty_four[key] + "<br/>";
+          }
+          document.getElementById("psi-twenty-four-hourly").innerHTML = content;
+          var reading_three = data.items[0].readings.psi_three_hourly;
+          var content1 = "";
+          for (var key in reading_three)
+            {
+              console.log(key + ": " + reading_three[key]);
+              content1 += key + ": " + reading_three[key] + "<br/>";
+            }
+          localStorage.setItem("three_hourly", JSON.stringify(reading_twenty_four));
+          })
+        .catch(function(error) {
+        console.error(error);
+        });
+      });
+    </pre>
+  <hr style="width:50%;text-align:left;margin-left:0">
+</body>
